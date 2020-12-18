@@ -1,0 +1,70 @@
+/* 変数 */
+:root{
+  --headerHeight: 60px;
+  --footerHeight: 30px;
+  --navHeight: 30px;
+}
+/* 全体設定 */
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body{
+  height: 100%;
+}
+/* 高さ設定 */
+header{
+  height: var(--headerHeight, 60px);
+}
+footer{
+  height: var(--footerHeight, 30px);
+}
+nav{
+  height: var(--navHeight, 30px);
+}
+main{
+  height: calc(100% - var(--headerHeight, 60px) - var(--footerHeight, 30px));
+  width: 100%;
+}
+.container{
+  display: flex;
+  height: 100%;
+}
+.content{
+  width: 100%;
+}
+
+.content article{
+  height: calc(100% - var(--navHeight, 30px));
+}
+
+.sideMenu{
+  width: 200px;
+}
+
+li{
+  list-style-type: none;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+#copyright{
+  padding-right: 10px;
+  text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+  .sideMenu{
+    writing-mode: vertical-rl;
+    width: 30px;
+  }
+  hr{
+    height:20px;
+  }
+  .sideMenu section{
+    display: none;
+  }
+}
